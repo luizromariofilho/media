@@ -6,28 +6,38 @@ angular.module('app',[])
 			$scope.media3 = 0
 		}
 
-		$scope.$watch(function(scope) {
-			return scope.media1 
-		},
-          	function(newValue, oldValue) {
-            	$scope.media2 = ((21 - newValue)/2) > 10 ? 10 : ((21 - newValue)/2)
-				$scope.media3 = ((21 - newValue)/2) > 10 ? 10 : ((21 - newValue)/2)
-          	}
-        );
+		$scope.limpar = function(){
+			$scope.init()
+		}
 
-        $scope.$watch(function(scope) {
-			return scope.media2 
-		},
-          	function(newValue, oldValue) {
-				$scope.media3 = (21 - newValue - $scope.media1) > 10 ? 10 : (21 - newValue - $scope.media1)
-          	}
-        );
+		$scope.calcular1 = function(){
+			$scope.media2 = ((21 - $scope.media1)/2) > 10 ? 10 : ((21 - $scope.media1)/2)
+			$scope.media3 = ((21 - $scope.media1)/2) > 10 ? 10 : ((21 - $scope.media1)/2)	
+			$scope.notaFinal = 15-((($scope.media1 + $scope.media2 + $scope.media3)/3)*2)
 
-        $scope.$watch(function(scope) {
-			return scope.media3 
-		},
-          	function(newValue, oldValue) {
-				$scope.final = 15-((($scope.media1 + $scope.media2 + $scope.media3)/3)*2)
-          	}
-        );
+			calcularResultado();
+		}
+
+		$scope.calcular2 = function(){
+			$scope.media3 = (21 - $scope.media2 - $scope.media1) > 10 ? 10 : (21 - $scope.media2 - $scope.media1)
+			$scope.notaFinal = 15-((($scope.media1 + $scope.media2 + $scope.media3)/3)*2)
+			
+			calcularResultado();
+		}
+
+		$scope.calcular3 = function(){
+			$scope.notaFinal = 15-((($scope.media1 + $scope.media2 + $scope.media3)/3)*2)
+
+			calcularResultado();
+		}
+
+		$scope.calculaResultado = function (){
+			calcularResultado();
+		}
+
+		function calcularResultado(){
+			$scope.resultado = ($scope.media1 + $scope.media2 + $scope.media3)/3
+			$scope.resultadoFinal = (((($scope.media1 + $scope.media2 + $scope.media3)/3)*2)+$scope.notaFinal)/3
+		}
+
 	}])
