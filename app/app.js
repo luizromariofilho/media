@@ -7,7 +7,9 @@ angular.module('app',[])
 		}
 
 		$scope.limpar = function(){
-			$scope.init()
+			$scope.init()			
+			$scope.resultadoFinal = 0
+			$scope.resultado = 0
 		}
 
 		$scope.calcular1 = function(){
