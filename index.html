@@ -5,11 +5,13 @@
 
 		<script type="text/javascript" src="lib/jquery/jquery-2.1.3.min.js"></script>
 		<script type="text/javascript" src="lib/angularjs/angular.min.js"></script>
+		<script type="text/javascript" src="lib/angularjs/angular-animate.min.js"></script>
 		<script type="text/javascript" src="lib/bootstrap/bootstrap.min.js"></script>
 
 
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/app.css">
 
 	</head>
 	<body ng-app="app">
@@ -34,10 +36,10 @@
 						<label for="final">Prova Final</label>
 						<input id="final" type="number" ng-model="notaFinal" class="form-control" ng-change="calculaResultado()" />
 					</div>
-					<span ng-show="resultado >= 7">
+					<span ng-show="resultado >= 7" class="sample-show-hide">
 						Resultado = {{resultado}}
 					</span>
-					<span ng-show="resultado < 7">
+					<span ng-show="resultado < 7" class="sample-show-hide">
 						Resultado = {{resultadoFinal}}
 					</span>
 					<div>

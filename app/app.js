@@ -1,4 +1,4 @@
-angular.module('app',[])
+angular.module('app',['ngAnimate'])
 	.controller('AppController', ['$scope', function($scope){
 		$scope.init = function(){
 			$scope.media1 = 0
