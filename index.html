@@ -32,14 +32,14 @@
 						<label for="media3">Media 03</label>
 						<input id="media3" type="number" ng-model="media3" class="form-control" ng-change="calcular3()" />
 					</div>
-					<div ng-show="resultado < 7" class="form-group">
+					<div ng-show="resultado < 7" class="form-group sample-show-hide">
 						<label for="final">Prova Final</label>
 						<input id="final" type="number" ng-model="notaFinal" class="form-control" ng-change="calculaResultado()" />
 					</div>
-					<span ng-show="resultado >= 7" class="sample-show-hide">
+					<span ng-show="resultado >= 7">
 						Resultado = {{resultado}}
 					</span>
-					<span ng-show="resultado < 7" class="sample-show-hide">
+					<span ng-show="resultado < 7">
 						Resultado = {{resultadoFinal}}
 					</span>
 					<div>

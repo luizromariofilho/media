@@ -1,9 +1,9 @@
 angular.module('app',['ngAnimate'])
 	.controller('AppController', ['$scope', function($scope){
 		$scope.init = function(){
-			$scope.media1 = 0
-			$scope.media2 = 0
-			$scope.media3 = 0
+			$scope.media1 = 7
+			$scope.media2 = 7
+			$scope.media3 = 7
 		}
 
 		$scope.limpar = function(){
